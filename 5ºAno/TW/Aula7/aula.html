@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>aula</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    </head>
+    <body>
+        <h1> Outono</h1>
+        <div id="main"> 
+            <p> Teste p1</p>
+        </div>
+        
+        
+        <script>
+            var textNode = document.createTextNode("Linha 2."); 
+            document.getElementById("main").appendChild(textNode);
+            
+            var p2= document.createElement("p");
+            p2.appendChild( document.createTextNode("Linha 3 b.") );
+            document.getElementById("main").appendChild(p2);
+        </script>
+    </body>
+</html>

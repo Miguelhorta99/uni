@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h2>Teste</h2>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <script>
+            var friends = ["Maria", "Rui", "José", "Carolina"];
+            var name = "Rui";
+
+            function myFunction() {
+                alert(friends[2]);
+            }
+
+
+            if (name.length > 4) {
+                alert("comprimento superior a 4");
+            } else {
+                alert("comprimento não superior a 4");
+            }
+            
+            var encontrei = 0;
+            for (var i = 0; i < friends.length; i++) {
+                
+                if (name === friends[i]) {
+                    encontrei = 1;
+                } 
+            }
+            
+            if(encontrei === 1){
+                alert("Há um amigo com o mesmo nome!");
+            }else {
+                alert("Nenhum homónimo");
+            }
+            
+            var myVariable = window.prompt("sometext","5");
+            
+            if(myVariable > 4 && isNaN(myVariable) === false){
+                 alert("Upper" + " " + "do tipo " + " " + typeof myVariable);
+            }else if (myVariable < 4 && isNaN(myVariable) === false){
+                alert("Lower" + " " + "do tipo " + " " + typeof myVariable);
+            }else {
+                alert("NaN");
+            }
+
+
+
+        </script>
+
+    </body>
+</html>

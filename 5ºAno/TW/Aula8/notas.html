@@ -1,0 +1,100 @@
+<!DOCTYPE html> <html>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <body>
+        <h2>Aula</h2>
+        <h3>fonte de dados</h3>
+        <textarea id="src1" rows="10" cols="60">
+{
+   "notas":[
+      {"aluno":"90001",
+       "aval":{
+         "f1":11,
+         "f2":12,
+         "f3":15
+      }},
+      {"aluno":"90002",
+       "aval":{
+         "f1":11,
+         "f2":12,
+         "f3":15
+      }}
+   ]
+}
+        </textarea>
+        <button onclick="f1()" >Click me</button>
+        <h3>resultado</h3>
+        <p id="target"></p>
+
+        <div id="myPlot" style="width:100%;max-width:700px"></div>
+        <script>
+            // obter e mostrar conteúdo de src1
+            // mostrar o tipo
+            // converter para Object
+            // no parágrafo com identificador "target", mostrar a média de cada aluno
+
+            function myFunction() {
+                var teste = document.getElementById("src1").value;
+
+                console.log(teste);
+
+                console.log(typeof teste);
+
+                const obj = JSON.parse(teste);
+
+                console.log(obj);
+
+                for (let i = 0; i < obj.notas.length; i++) {
+                    console.log(obj.notas[i].aluno);
+                    var media = (obj.notas[i].aval.f1 + obj.notas[i].aval.f2 + obj.notas[i].aval.f3) / 3;
+                    console.log(media);
+
+                    document.getElementById("target").innerHTML += "<br>Aluno: " + obj.notas[i].aluno + " com media: " + media;
+                }
+
+            }
+
+            function f1() {
+                const obj = JSON.parse(document.getElementById("src1").value);
+                var freq1 = [];
+                var freq2 = [];
+                var freq3 = [];
+                var media = [];
+                var aluno = [];
+
+                for (var i = 0; i < obj.notas.length; i++) {
+                    freq1.push(obj.notas[i].aval.f1);
+                    freq2.push(obj.notas[i].aval.f2);
+                    freq3.push(obj.notas[i].aval.f3);
+                    media.push((obj.notas[i].aval.f1 + obj.notas[i].aval.f2 + obj.notas[i].aval.f3) / 3);
+
+                    aluno.push(parseInt(obj.notas[i].aluno));
+                    console.log(freq1);
+                    console.log(freq2);
+                    console.log(freq3);
+                    console.log(media);
+                    console.log(aluno);
+                }
+
+
+                // Define Data
+                var data = [{
+                        x: aluno,
+                        y: media,
+                        mode: "markers",
+                        type: "scatter"
+                    }];
+
+// Define Layout
+                var layout = {
+                    xaxis: {range: [89999, 90005], title: "Alunos"},
+                    yaxis: {range: [5, 16], title: "Frequencia 1"},
+                    title: "Notas dos alunos (freq 1)"
+                };
+
+                Plotly.newPlot("myPlot", data, layout);
+
+            }
+
+        </script>
+    </body>
+</html>

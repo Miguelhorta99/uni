@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>conversor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            function validateForm() {
+                let x = document.forms["form"]["from"].value;
+                let y = document.forms["form"]["to"].value;
+                let z = document.forms["form"]["value"].value;
+
+                if (x === "" || y === "" || z === "") {
+                    alert("U mustt fill all form");
+                    return false;
+                }
+            }
+
+
+            function valCoin(val) {
+                let x = document.forms["form"]["from"].value;
+                let y = document.forms["form"]["to"].value;
+
+                var textNode = document.createTextNode(x + " para "+ y);
+                document.getElementById("conv_zone").appendChild(textNode);
+                
+                if (val !== "USD" && val !== "GBP" && val !== "BRL" && val !== "EUR") {
+                    var p2 = document.createElement("p");
+                    p2.appendChild(document.createTextNode("moeda de origem inválida"));
+                    document.getElementById("alertas").appendChild(p2);
+                }
+
+            }
+
+            function valCoinDest(val) {
+                
+                let x = document.forms["form"]["from"].value;
+                let y = document.forms["form"]["to"].value;
+
+                var textNode = document.createTextNode(x + " para "+ y);
+                document.getElementById("conv_zone").appendChild(textNode);
+                
+                if (val !== "USD" && val !== "GBP" && val !== "BRL" && val !== "EUR") {
+                    var p2 = document.createElement("p");
+                    p2.appendChild(document.createTextNode("moeda de destino inválida"));
+                    document.getElementById("alertas").appendChild(p2);
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Câmbio</h1>
+        <form name="form" action="https://www.bportugal.pt/conversor-moeda" onsubmit="return validateForm()" method="POST">
+            <p>
+                Moeda de origem:
+                <input type="text" name="from" size="10" value="EUR" onchange="valCoin(this.value)" required pattern="EUR|USD|GBP|BRL">
+                Moeda final:
+                <input type="text" name="to" size="10" value="EUR" onchange="valCoinDest(this.value)" required pattern="EUR|USD|GBP|BRL">
+            </p>            
+            <p>
+                Valor a converter: <span id="conv_zone"> </span>
+                <input type="text" name="value" id="conv_value" value="1">
+            </p>         
+
+            <input type="submit" value="converter">
+        </form>
+
+        <div id="alertas" style="color: red;">
+
+        </div>
+    </body>
+</html>

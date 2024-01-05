@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="container">
+            <p> Welcome to the Billion Dollar Web Page!</p>
+            <p id="status"></p>
+        </div>
+        
+        <button onclick="increment()">Check</button>
+
+        <script>
+            var messages = 0;
+            var originalTitle = document.title;
+            
+            function increment() {
+                messages++;
+                document.title = "(" + parseInt(messages) + " " + "unread messages" +")" + originalTitle; 
+                
+                document.getElementById("status").innerHTML = "You have" + " " + messages + " unread messages";
+                
+                if(messages >= 4){
+                    document.getElementById("status").style.color = "red";
+                    document.getElementById("status").style.fontWeight = "bold";
+                    
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>
