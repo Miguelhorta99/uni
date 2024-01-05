@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        
+        <title>Room rent- ADMIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="js/script.js"></script>
+        <link rel="icon" href="https://www.uevora.pt/extension/uepages/design/ueresponsive_layout1/images/favicon.ico" type="image/x-icon">
+        
+    </head>
+    
+       
+    
+    <body>
+
+        <img id="fundo" src="../images/fundo.jpg" alt="fundo">
+
+
+        <div id="top">
+            <img id="logo" src="../images/alugar_quarto.png" alt="Logo">
+            <p id="nameOfCompany">Room Rent</p>
+            <button id="registar_oferta_button">Registar Oferta</button>
+            <button id="registar_procura_button">Registar Procura</button>
+            <button id="procurar_anuncios_button">Procurar Anuncios</button>
+            <button id="anuncios_button">Anuncios</button>
+            <button id="acessoReservado_button">Acesso Reservado</button>
+            <button id="utlizador_registado_button">Utilizador Registado</button>
+            <button id="login_regist_button">Login/Registo</button>
+        </div>
+
+
+        <div id="acessoReservado" class="mainData">
+            <div id="newMiddleConsultarUmNovoAnuncioDiv">
+                <p id="titleConsultarUmNovoAnuncio">Consultar um Novo Anúncio</p>
+                <form id="consultarUmNovoAnuncioForm" method="POST">
+                    <input type="submit" id="submitAtivarAnuncio" class="buttonsOfAnuncios" value="Ativar anuncio">
+                </form>
+                <br>
+                <p id="responseAtivarAnuncio"></p>
+            </div>
+            <br>
+            <br>
+            <div id="newMiddleValidacaoAnuncioDiv">
+                <p id="titleValidarUmNovoAnuncio">Validar um Novo Anúncio</p>
+                <form id="validarUmNovoAnuncioForm" method="POST">
+                    <label>Anuncio:
+                        <input type="text" name="aid">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Estado:
+                        <input type="text" name="estado">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Descrição:
+                        <input type="text" name="descricao">
+                    </label>
+                    <br>
+                    <br>
+                    <input type="submit" id="submitValidarAnuncio" class="buttonsOfAnuncios" value="Validar anuncio">
+                </form>
+                <br>
+                <p id="responseValidarAnuncio"></p>
+            </div>
+            <br>
+
+        </div>
+
+        <div id="anuncios" class="mainData">  </div>
+
+        <div id="detalhesAnuncio" class="mainData"> </div>
+
+        <div id="consultarAnuncioDiv" class="mainData"> </div>
+
+        <div id="consultarAnuncioDiv" class="mainData"> </div>
+
+       
+
+        <!--  ---------------------------------------------------------------------------- -->
+
+        
+
+        <div id="bottom">
+            <div id="contactosDiv">
+                <p class="titulodeCadaDivBottom">Contactos:</p>
+                <p class="textoBottom">l42731@alunos.uevora.pt</p>
+            </div>
+            <div id="creditosDiv">
+                <p class="titulodeCadaDivBottom">Cŕeditos:</p>
+                <p class="textoBottom">Miguel Ângelo Parreira Horta</p>
+            </div>
+            <div id="patrocinadoresDiv">
+                <p class="titulodeCadaDivBottom">Patrocinadores:</p>
+                <a href="https://www.remax.pt"><img id = "remax" class="imageBottom" src="../images/remax.png" alt="Remax"></a>
+                <a href="https://www.uevora.pt/"><img id = "ue" class="imageBottom" src="../images/logo_uevora_.png" alt="UE"></a>
+                <a href="https://www.cafeshistoricos.pt/momentos/2-uncategorised/25-cafe-arcada-evora"><img id = "arcada" class="imageBottom" src="../images/Logotipo_arcada.jpeg" alt="Arcada"></a>
+            </div>
+
+        </div>
+                                                                                                                                                                                                       
+    </body>
+</html>

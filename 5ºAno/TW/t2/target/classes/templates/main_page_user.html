@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        
+        <title>Room rent- USER</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="js/script.js"></script>
+        <link rel="icon" href="https://www.uevora.pt/extension/uepages/design/ueresponsive_layout1/images/favicon.ico" type="image/x-icon">
+    </head>
+    
+       
+    
+    <body>
+
+        <img id="fundo" src="../images/fundo.jpg" alt="fundo">
+
+
+        <div id="top">
+            <img id="logo" src="../images/alugar_quarto.png" alt="Logo">
+            <p id="nameOfCompany">Room Rent</p>
+            <button id="registar_oferta_button">Registar Oferta</button>
+            <button id="registar_procura_button">Registar Procura</button>
+            <button id="procurar_anuncios_button">Procurar Anuncios</button>
+            <button id="anuncios_button">Anuncios</button>
+            <button id="acessoReservado_button">Acesso Reservado</button>
+            <button id="utlizador_registado_button">Utilizador Registado</button>
+            <button id="login_regist_button">Login/Registo</button>
+        </div>
+
+
+        <div id="registarOferta" class="mainData">
+            <div id="newMiddleRegistarOferta">
+                <p id="titleRegistarOferta">Registar Oferta</p>
+                <form id="registarOfertaForm" method="POST">
+                    <label>Tipo de alojamento:
+                    <input type="radio" id="quartoOferta" name="tipo_alojamento" value="Quarto"><label for="quartoOferta">Quarto</label>
+                    <input type="radio" id="casaOferta" name="tipo_alojamento" value="Casa"><label for="casaOferta">Casa</label>
+                    </label>
+                    <br>
+                    <br>
+                    <label>Se pretende uma casa, indique o número de quartos:
+                        <select name="nrQuartosCasa">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6+">6+</option>
+                        </select>
+                    </label>
+                    <br>
+                    <br>
+                    <label>Arrendatário:
+                        <select name="genero">
+                            <option value="m">Masculino</option>
+                            <option value="f">Feminino</option>
+                            <option value="indif">Indiferente</option>
+                        </select>
+                    </label>
+                    <br>
+                    <br>
+                    <label>Preço(€):
+                        <input type="text" name="preco">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Localização:
+                        <select name="zona">
+                            <option value="bacelo">Bacelo</option>
+                            <option value="malagueira">Malagueira</option>
+                            <option value="centroHistorico">Centro Histórico</option>
+                            <option value="nossaSraSaude">Nossa Sra. da Saúde</option>
+                            <option value="hortaDasFigueiras">Horta das Figueiras</option>
+                        </select>
+                    </label>
+                    <br>
+                    <br>
+                    <label>Equipado:
+                        <input type="radio" id="equipadoSimOferta" name="equipado" value="sim"><label for="equipadoSim">Sim</label>
+                        <input type="radio" id="equipadoNaoOferta" name="equipado" value="nao"><label for="equipadoNao">Não</label>
+                    </label>
+                    <br>
+                    <br>
+                    <label>Descrição da casa:
+                        <input type="text" name="detalhes">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Nome do Anunciante:
+                        <input type="text" name="anunciante">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Contacto:
+                        <input type="text" name="contacto">
+                    </label>
+                    <br>
+                    <br>
+                    <input type="submit" id="submitRegistarOferta" class="buttonsOfAnuncios" value="Registar">
+                </form>
+                <br>
+                <p id="responseRegistarOferta"></p>
+            </div>
+
+        </div>
+
+        <div id="registarProcura" class="mainData">
+            <div id="newMiddleRegistarProcura">
+                <p id="titleRegistarProcura">Registar Procura</p>
+                <form id="registarProcuraForm" method="POST">
+                    <label>Tipo de alojamento:
+                        <input type="radio" id="quartoProcura" name="tipo_alojamento" value="Quarto"><label for="quartoProcura">Quarto</label>
+                        <input type="radio" id="casaProcura" name="tipo_alojamento" value="Casa"><label for="casaProcura">Casa</label>
+                    </label>
+                    <br>
+                    <br>
+                    <label>Se pretende uma casa, indique o número de quartos:
+                        <select name="nrQuartosCasa">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6+">6+</option>
+                        </select>
+                    </label>
+                    <br>
+                    <br>
+                    <label>Arrendatário:
+                        <select name="genero">
+                            <option value="m">Masculino</option>
+                            <option value="f">Feminino</option>
+                            <option value="indif">Indiferente</option>
+                        </select>
+                    </label>
+                    <br>
+                    <br>
+                    <label>Preço(€):
+                        <input type="text" name="preco">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Localização:
+                        <select name="zona">
+                            <option value="bacelo">Bacelo</option>
+                            <option value="malagueira">Malagueira</option>
+                            <option value="centroHistorico">Centro Histórico</option>
+                            <option value="nossaSraSaude">Nossa Sra. da Saúde</option>
+                            <option value="hortaDasFigueiras">Horta das Figueiras</option>
+                        </select>
+                    </label>                                                                                                                                                                                             
+                    <br>
+                    <br>
+                     <label>Equipado:
+                        <input type="radio" id="equipadoSimProcura" name="equipado" value="sim"><label for="equipadoSim">Sim</label>
+                        <input type="radio" id="equipadoNaoProcura" name="equipado" value="nao"><label for="equipadoNao">Não</label>
+                    </label>                                                                                                                                                                                   
+                    <br>
+                    <br>
+                    <label>Descrição da casa:
+                        <input type="text" name="detalhes">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Nome do Anunciante:
+                        <input type="text" name="anunciante">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Contacto:
+                        <input type="text" name="contacto">
+                    </label>
+                    <br>
+                    <br>
+                    <input type="submit" id="submitRegistarProcura" class="buttonsOfAnuncios" value="Registar">
+                </form>
+                <br>
+                <p id="responseRegistarProcura"></p>
+            </div>
+            
+        </div>
+            
+        <div id="procurarAnuncio" class="mainData">
+            <div id="newMiddleDivProcurarAnuncio">
+                <form id="procurarAnuncioForm" method="POST">
+                    <label>Tipo de Anuncio (oferta, procura): <!-- obrigatorio -->
+                        <input type="text" name="tipo">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Zona:<!-- opcinall -->
+                        <input type="text" name="zona">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Nome do Anunciante:<!-- opcinal -->
+                        <input type="text" name="nomeAnunciante">
+                    </label>
+                    <br>
+                    <br>
+                    <input type="submit" id="submitProcurarAnuncio" class="buttonsOfAnuncios" value="Procurar Anuncio">
+                </form>
+                <br>
+
+            </div>
+        </div>
+
+        <div id="anuncios" class="mainData">  </div>
+
+        <div id="detalhesAnuncio" class="mainData"> </div>
+
+        <div id="consultarAnuncioDiv" class="mainData"> </div>
+
+        <div id="consultarAnuncioDiv" class="mainData"> </div>
+
+        <div id="enviarMensagemAoAnunciante" class="mainData">
+            <div id="newMiddleDivEnviarMensagemAoAnunciante">
+                <form id="enviarMensagemAoAnuncianteForm" method="POST">
+                    <label>Anuncio: 
+                        <input type="text" name="aid">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Remetente: 
+                        <input type="text" name="remetente">
+                    </label>
+                    <br>
+                    <br>
+                    <label>Mensagem: 
+                        <input type="text" name="msg">
+                    </label>
+                    <br>
+                    <br>
+                    <input type="submit" id="submitEnviarMensagemAoAnunciante" class="buttonsOfAnuncios" value="Enviar Mensagem">
+                </form>
+                <p id="responseEnviarMensagemAoAnunciante"></p>
+            </div>
+        </div>
+          
+         <div id="consultarMensagensUtilizadorRegistado" class="mainData">
+            <div id="newMiddleDivConsultarMensagensUtilizadorRegistado">
+                <form id="consultarMensagensUtilizadorRegistadoForm" method="POST">
+
+                    <input type="submit" id="submitConsultarMensagensUtilizadorRegistado" class="buttonsOfAnuncios" value="Cosultar Mensagens">
+                </form>
+            </div>
+        </div>
+       
+
+        <!--  ---------------------------------------------------------------------------- -->
+
+        
+
+        <div id="bottom">
+            <div id="contactosDiv">
+                <p class="titulodeCadaDivBottom">Contactos:</p>
+                <p class="textoBottom">l42731@alunos.uevora.pt</p>
+            </div>
+            <div id="creditosDiv">
+                <p class="titulodeCadaDivBottom">Cŕeditos:</p>
+                <p class="textoBottom">Miguel Ângelo Parreira Horta</p>
+            </div>
+            <div id="patrocinadoresDiv">
+                <p class="titulodeCadaDivBottom">Patrocinadores:</p>
+                <a href="https://www.remax.pt"><img id = "remax" class="imageBottom" src="../images/remax.png" alt="Remax"></a>
+                <a href="https://www.uevora.pt/"><img id = "ue" class="imageBottom" src="../images/logo_uevora_.png" alt="UE"></a>
+                <a href="https://www.cafeshistoricos.pt/momentos/2-uncategorised/25-cafe-arcada-evora"><img id = "arcada" class="imageBottom" src="../images/Logotipo_arcada.jpeg" alt="Arcada"></a>
+            </div>
+
+        </div>
+                                                                                                                                                                                                       
+    </body>
+</html>

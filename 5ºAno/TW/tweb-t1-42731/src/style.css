@@ -1,0 +1,592 @@
+/* cabeçalho */
+
+#top{
+    margin-top: 5px;
+    background-color: gray;
+    border-style: solid;
+
+    border-color: black;
+    width: 100%;
+    height: 200px;
+}
+
+#fundo{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+#top button{
+    border-radius: 4px;
+    float: left;
+    border-color:#73a0e9;
+}
+
+#nameOfCompany{
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#logo{
+    float: left;
+    width: 200px;
+    height: 200px;
+}
+/*----------------------------------------------------------------------*/
+
+/* conteúdo principal*/
+
+.mainData{
+    width: 100%;
+    margin-top: 10px;
+    border-style: solid;
+
+    border-color: black;
+    height: 80%;
+}
+/*----------------------------------------------------------------------*/
+
+/* fim da página */
+
+#bottom{
+    text-align: center;
+    margin-top: 5px;
+    background-color: gray;
+    border-style: solid;
+
+    border-color: black;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.imageBottom{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+#contactosDiv, #creditosDiv, #patrocinadoresDiv{
+    width: 32%;
+}
+
+.titulodeCadaDivBottom{
+    font-weight: bold;
+    font-size: 23px;
+}
+/*----------------------------------------------------------------------*/
+
+#anuncios{
+    display: none;
+    text-align: center;
+    height: 75%;
+}
+
+#detalhesAnuncio{
+    display: none;
+    text-align: center;
+    height: 75%;
+}
+
+#consultarAnuncioDiv{
+    display: none;
+    text-align: center;
+}
+
+#registarOferta{
+    display: none;
+    text-align: center;
+}
+
+#registarProcura{
+    display: none;
+    text-align: center;
+}
+
+#procurarAnuncio{
+    display: none;
+    text-align: center;
+}
+
+#enviarMensagemAoAnunciante{
+    display: none;
+    text-align: center;
+}
+
+#consultarMensagensUtilizadorRegistado{
+    display: none;
+    text-align: center;
+}
+
+#acessoReservado{
+    display: none;
+    text-align: center;
+}
+
+#newMiddleValidacaoAnuncioDiv{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    height: 280px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+}
+
+#newMiddleDivProcurarAnuncio{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 280px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+}
+
+#newMiddleConsultarUmNovoAnuncioDiv{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    height: 280px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+}
+
+#newMiddleDivEnviarMensagemAoAnunciante{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    height: 280px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+}
+
+#titleConsultarUmNovoAnuncio{
+    text-align: center;
+    font-weight: bold;
+}
+
+#titleValidarUmNovoAnuncio{
+    text-align: center;
+    font-weight: bold;
+}
+/* mudar botoes*/
+
+.buttonsOfAnuncios{
+    color: blue;
+    border-radius: 4px;
+    border: 2px solid lightblue;
+    transition-duration: 0.2s;
+}
+
+.buttonsOfAnuncios:hover{
+    background-color: #73a0e9;
+    color: white;
+}
+
+.separateLine{
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+}
+
+table, th, td{
+    border: 2px solid #73a0e9;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr:hover{
+    background-color: #a9b2c0;
+}
+
+
+/* ------------------------------------------MEDIA QUERIES ---------------------------------------------------------------
+
+*/
+@media screen and (min-device-width:250px){
+
+    #nameOfCompany{
+        font-size: 15px;
+    }
+
+    #top{
+        height: 80px;
+    }
+
+    #logo{
+        width: 100px;
+        height: 80px;
+    }
+
+    #top button{
+        font-size: 1.2px;
+        width: 5%;
+        height: 10px;
+        margin-left: 10px;
+    }
+
+    #bottom{
+        margin-top: 5px;
+        height: 80px;
+
+    }
+
+    .imageBottom{
+        width: 15px;
+        height: 15px;
+        margin-right: 3px;
+    }
+
+    .titulodeCadaDivBottom{
+        font-size: 7px;
+    }
+
+    .textoBottom{
+        font-size: 4.5px;
+    }
+
+    .mainData{
+        height: 300px;
+        font-size: 4.5px;
+    }
+
+    .buttonsOfAnuncios{
+        width: 40px;
+        height: 10px;
+        margin-right: 3px;
+        font-size: 2.5px;
+    }
+
+    #newMiddleDivProcurarAnuncio{
+        margin-top: 20px;
+        width: 400px;
+        height: 200px;
+    }
+
+    #newMiddleDivEnviarMensagemAoAnunciante{
+        width: 250px;
+        height: 200px;
+    }
+
+    #newMiddleDivConsultarMensagensUtilizadorRegistado{
+        width: 250px;
+        height: 200px;
+    }
+}
+
+@media screen and (min-device-width:300px){
+    #top button{
+        font-size: 1.3px;
+        margin-left: 13px;
+    }
+}
+
+@media screen and (min-device-width:350px){
+    #top button{
+        font-size: 1.4px;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-device-width:450px){
+    #top button{
+        font-size: 1.8px;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-device-width:500px){
+
+    #nameOfCompany{
+        font-size: 25px;
+    }
+
+    #top{
+        height: 100px;
+    }
+
+    #logo{
+        width: 130px;
+        height: 100px;
+    }
+
+    #top button{
+        font-size: 3px;
+        width: 7%;
+        height: 15px;
+        margin-left: 27px;
+    }
+
+    #bottom{
+        margin-top: 5px;
+        height: 100px;
+
+    }
+
+    .imageBottom{
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .titulodeCadaDivBottom{
+        font-size: 12px;
+    }
+
+    .textoBottom{
+        font-size: 7.5px;
+    }
+
+    .mainData{
+        height: 400px;
+        font-size: 7px;
+    }
+
+    .buttonsOfAnuncios{
+        width: 60px;
+        height: 18px;
+        margin-right: 8px;
+        font-size: 4px;
+    }
+
+    #newMiddleDivProcurarAnuncio{
+        margin-top: 20px;
+        width: 450px;
+        height: 230px;
+    }
+
+    #newMiddleDivEnviarMensagemAoAnunciante{
+        width: 250px;
+        height: 230px;
+    }
+
+    #newMiddleDivConsultarMensagensUtilizadorRegistado{
+        width: 250px;
+        height: 230px;
+    }
+}
+
+@media screen and (min-device-width:550px){
+    #top button{
+        font-size: 3px;
+        margin-left: 32px;
+    }
+}
+
+@media screen and (min-device-width:600px){
+    #top button{
+        font-size: 3px;
+        margin-left: 35px;
+    }
+}
+
+@media screen and (min-device-width:650px){
+    #top button{
+        font-size: 4px;
+        margin-left: 40px;
+    }
+}
+
+@media screen and (min-device-width:700px){
+    #top button{
+        font-size: 5px;
+        margin-left: 45px;
+    }
+}
+
+@media screen and (min-device-width:800px){
+
+    #nameOfCompany{
+        font-size: 35px;
+    }
+
+    #top{
+        height: 140px;
+    }
+
+    #logo{
+        width: 180px;
+        height: 140px;
+    }
+
+    #top button{
+        font-size: 7px;
+        width: 8%;
+        height: 22px;
+        margin-left: 40px;
+    }
+
+    #bottom{
+        margin-top: 5px;
+        height: 140px;
+
+    }
+
+    .imageOfBottom{
+        width: 40px;
+        height: 40px;
+        margin-right: 7px;
+    }
+
+    .titulodeCadaDivBottom{
+        font-size: 15px;
+    }
+
+    .textoBottom{
+        font-size: 12px;
+    }
+
+    .mainData{
+        height: 500px;
+        font-size: 9px;
+    }
+
+    .buttonsOfAnuncios{
+        width: 120px;
+        height: 22px;
+        margin-right: 9px;
+        font-size: 7px;
+    }
+
+
+    #newMiddleDivProcurarAnuncio{
+        margin-top: 20px;
+        width: 500px;
+        height: 250px;
+    }
+
+    #newMiddleDivEnviarMensagemAoAnunciante{
+        width: 280px;
+        height: 240px;
+    }
+
+    #newMiddleDivConsultarMensagensUtilizadorRegistado{
+        width: 260px;
+        height: 250px;
+    }
+
+}
+
+
+@media screen and (min-device-width:900px){
+
+    #top button{
+        font-size: 8px;
+        width: 9%;
+        height: 23px;
+        margin-left: 43px;
+    }
+}
+
+@media screen and (min-device-width:1000px){
+
+    #top button{
+        font-size: 9px;
+    }
+}
+
+@media screen and (min-device-width:1100px){
+
+    #top button{
+        font-size: 10px;
+        width: 10%;
+        height: 23px;
+        margin-left: 45px;
+    }
+}
+
+@media screen and (min-device-width:1200px){
+
+    #nameOfCompany{
+        font-size: 50px;
+    }
+
+    #top{
+        height: 200px;
+    }
+
+    #logo{
+        width: 250px;
+        height: 200px;
+    }
+
+    #top button{
+        font-size: 11px;
+        width: 10%;
+        height: 25px;
+        margin-left: 35px;
+    }
+
+    #bottom{
+        margin-top: 5px;
+        height: 200px;
+
+    }
+
+    .imageOfBottom{
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+    }
+
+    .titulodeCadaDivBottom{
+        font-size: 20px;
+    }
+
+    .textoBottom{
+        font-size: 17px;
+    }
+
+    .mainData{
+        height: 800px;
+        font-size: 12px;
+    }
+
+    .buttonsOfAnuncios{
+        width: 150px;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 11px;
+    }
+
+    #newMiddleDivProcurarAnuncio{
+        margin-top: 20px;
+        width: 550px;
+        height: 320px;
+    }
+
+    #newMiddleDivEnviarMensagemAoAnunciante{
+        width: 320px;
+        height: 320px;
+    }
+
+    #newMiddleDivConsultarMensagensUtilizadorRegistado{
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media screen and (min-device-width:1500px){
+
+    #top button{
+        font-size: 12px;
+        width: 11%;
+        height: 30px;
+        margin-left: 50px;
+    }
+
+}
+
