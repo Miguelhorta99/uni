@@ -1,0 +1,31 @@
+Acho que não se percebe grande coisa do meu rascunho, basicamente desenhei o grafo e fui calculando à mão, como poderia distribuir as pessoas pelos diferentes nós.
+
+Mas um apanhado geral da solução:
+
+Grafo: representado por listas de adjadência. 
+Cada região é representada por um índice.
+
+Matriz de capacidade: 
+
+Armazena das capacidades das arestas entre os nós do grafo.
+
+Breath-First Search (BFS): 
+
+Procura os caminhos no grafo, começando na origem e explorando cada nó. 
+Se encontrar o nó de destino significa que foi encontrado um caminho com capacidade.
+
+Max-Flow: 
+
+Calcula o fluxo máximo da origem para o destino, usa o BFS as remaining capacities. 
+O processo termina quando o número de conexões percorrida é igual ao número total de conexões.
+
+Quanto às linhas 52-62, estas definem as capacidades iniciais das arestas no grafo (ou seja, o fluxo máximo). 
+
+O primeiro ciclo for define as capacidades para cada uma das regiões, desde a 1 até à região R. 
+O segundo define as capacidades das arestas que partem de cada região (1 a R) para os vizinhos.
+A linha 60 é uma relação ternária que verifica se a região atual i é a região segura. 
+Se for então atribui infinito a essa capacidade desde essa região para o nó de destino (sink), permitindo que o máximo de pessoas sejam evacuadas para a região segura. 
+
+Caso contrário, é só igual à capacidade máxima de transporte entre regiões (regionData[i-1][1]).
+
+Este site explica bem o a ideia do BFS: https://www.programiz.com/dsa/graph-bfs
